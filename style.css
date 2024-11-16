@@ -1,0 +1,74 @@
+body {
+    background-color: #111;
+    color: #eee;
+    font-family: 'Roboto Mono', monospace; /* Example futuristic font */
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+.section {
+    min-height: 100vh; /* Ensure each section takes full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;  
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: bold;  
+    text-shadow: 0 0 10px #0ff, 0 0 20px #f0f;  
+    margin-bottom: 20px;
+}
+
+h1::before {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        animation: typing 3s forwards;
+        border-right: 2px solid #0f0;
+}
+
+p, li {  
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+
+
+.widget-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 20px;
+}
+
+
+.side-by-side {
+    display: flex;
+    gap: 20px;  
+}
+
+
+.content-wrapper {
+    scroll-behavior: smooth;
+}
+
+.parallax-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("your-cyberpunk-background.jpg"); /* Replace with your image */
+    background-size: cover;
+    background-attachment: fixed;  
+    filter: blur(5px);
+    opacity: 0.5;  
+    z-index: -1;
+}
